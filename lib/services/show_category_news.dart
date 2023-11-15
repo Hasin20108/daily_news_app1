@@ -1,13 +1,14 @@
 import 'dart:convert';
 
+import 'package:daily_news_app1/models/show_category.dart';
 import 'package:daily_news_app1/models/slider_model.dart';
 import 'package:http/http.dart' as http;
 
 
-class Sliders{
-  List<SliderModel> sliders = [];
-  Future<void> getSlider()async{
-    String url = "https://newsapi.org/v2/everything?q=apple&from=2023-11-13&to=2023-11-13&sortBy=popularity&apiKey=3c2b186736be411bb5999fe4f92143ac";
+class ShowCategoryNews{
+  List<ShowCategoryModel> categories= [];
+  Future<void> getCategoriesNews(String category )async{
+    String url = "https://newsapi.org/v2/top-headlines?country=us&category=$category&apiKey=3c2b186736be411bb5999fe4f92143ac";
 
     var response = await http.get(Uri.parse(url));
 
@@ -16,14 +17,14 @@ class Sliders{
       jsonData["articles"].forEach((element){
 
         if(element['urlToImage'] != null && element['description'] != null){
-          SliderModel sliderModel = SliderModel(
+          ShowCategoryModel categoryModel = ShowCategoryModel(
             title: element["title"],
             description: element["description"],
             url: element["url"],
             urlToImage: element["urlToImage"],
             content: element["content"],
           );
-          sliders.add(sliderModel);
+          categories.add(categoryModel);
         }
 
 
