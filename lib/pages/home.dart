@@ -3,6 +3,7 @@ import 'package:carousel_slider/carousel_slider.dart';
 import 'package:daily_news_app1/models/article_model.dart';
 import 'package:daily_news_app1/models/category_model.dart';
 import 'package:daily_news_app1/models/slider_model.dart';
+import 'package:daily_news_app1/pages/all_news.dart';
 import 'package:daily_news_app1/pages/article_view.dart';
 import 'package:daily_news_app1/pages/category_news.dart';
 import 'package:daily_news_app1/services/data.dart';
@@ -101,12 +102,17 @@ class _HomeState extends State<Home> {
                                 fontSize: 18.0,
                                 fontFamily: 'Young_Serif'),
                           ),
-                          Text(
-                            "views all",
-                            style: TextStyle(
-                                color: Colors.blue,
-                                fontWeight: FontWeight.w500,
-                                fontSize: 15.0),
+                          GestureDetector(
+                            onTap: (){
+                              Navigator.push(context, MaterialPageRoute(builder: (context) => AllNews(news: "Breaking")));
+                            },
+                            child: Text(
+                              "views all",
+                              style: TextStyle(
+                                  color: Colors.blue,
+                                  fontWeight: FontWeight.w500,
+                                  fontSize: 15.0),
+                            ),
                           ),
                         ],
                       ),
@@ -152,12 +158,17 @@ class _HomeState extends State<Home> {
                                 fontWeight: FontWeight.bold,
                                 fontSize: 16.0),
                           ),
-                          Text(
-                            "views all",
-                            style: TextStyle(
-                                color: Colors.blue,
-                                fontWeight: FontWeight.w500,
-                                fontSize: 15.0),
+                          GestureDetector(
+                            onTap: (){
+                              Navigator.push(context, MaterialPageRoute(builder: (context) => AllNews(news: "Trending")));
+                            },
+                            child: Text(
+                              "views all",
+                              style: TextStyle(
+                                  color: Colors.blue,
+                                  fontWeight: FontWeight.w500,
+                                  fontSize: 15.0),
+                            ),
                           ),
                         ],
                       ),
