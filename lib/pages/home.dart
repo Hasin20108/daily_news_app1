@@ -121,7 +121,7 @@ class _HomeState extends State<Home> {
                       height: 10.0,
                     ),
                     CarouselSlider.builder(
-                      itemCount: 5,
+                      itemCount: sliders.length,
                       itemBuilder: (context, index, realIndex) {
                         String? res = sliders[index].urlToImage;
                         String? res1 = sliders[index].title;
