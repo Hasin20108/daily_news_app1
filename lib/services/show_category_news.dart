@@ -1,7 +1,7 @@
 import 'dart:convert';
 
-import 'package:daily_news_app1/models/show_category.dart';
-import 'package:daily_news_app1/models/slider_model.dart';
+import 'package:DailyNews/models/show_category.dart';
+import 'package:DailyNews/models/slider_model.dart';
 import 'package:http/http.dart' as http;
 
 

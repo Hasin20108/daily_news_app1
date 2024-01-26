@@ -1,4 +1,4 @@
-import 'package:daily_news_app1/pages/home.dart';
+import 'package:DailyNews/pages/home.dart';
 import 'package:flutter/material.dart';
 
 class LandingPage extends StatefulWidget {

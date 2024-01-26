@@ -19,7 +19,7 @@ class _ArticleViewState extends State<ArticleView> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Text("Daily"),
-            Text(" News",
+            Text("News",
                 style:
                     TextStyle(color: Colors.blue, fontWeight: FontWeight.bold))
           ],

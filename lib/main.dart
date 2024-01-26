@@ -1,5 +1,5 @@
-import 'package:daily_news_app1/pages/home.dart';
-import 'package:daily_news_app1/pages/landing_page.dart';
+import 'package:DailyNews/pages/home.dart';
+import 'package:DailyNews/pages/landing_page.dart';
 import 'package:flutter/material.dart';
  
 void main() {

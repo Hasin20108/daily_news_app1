@@ -1,4 +1,4 @@
-# daily_news_app1
+# DailyNews
 
 A new Flutter project.
 

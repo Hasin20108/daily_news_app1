@@ -1,4 +1,4 @@
-import 'package:daily_news_app1/models/category_model.dart';
+import 'package:DailyNews/models/category_model.dart';
 
 List<CategoryModel> getCategories(){
   

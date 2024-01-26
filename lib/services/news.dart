@@ -1,6 +1,6 @@
 import 'dart:convert';
 
-import 'package:daily_news_app1/models/article_model.dart';
+import 'package:DailyNews/models/article_model.dart';
 import 'package:http/http.dart' as http;
 
 

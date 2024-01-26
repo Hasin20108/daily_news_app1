@@ -46,7 +46,7 @@ class _AllNewsState extends State<AllNews> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(widget.news+" News",
+        title: Text(widget.news+"News",
             style: TextStyle(color: Colors.blue, fontWeight: FontWeight.bold)),
         centerTitle: true,
         elevation: 0.0,

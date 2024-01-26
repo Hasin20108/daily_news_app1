@@ -1,7 +1,7 @@
 import 'package:cached_network_image/cached_network_image.dart';
-import 'package:daily_news_app1/models/show_category.dart';
-import 'package:daily_news_app1/pages/article_view.dart';
-import 'package:daily_news_app1/services/show_category_news.dart';
+import 'package:DailyNews/models/show_category.dart';
+import 'package:DailyNews/pages/article_view.dart';
+import 'package:DailyNews/services/show_category_news.dart';
 import 'package:flutter/material.dart';
 
 class CategoryNews extends StatefulWidget {

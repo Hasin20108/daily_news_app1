@@ -1,6 +1,6 @@
 {
-    "name": "daily_news_app1",
-    "short_name": "daily_news_app1",
+    "name": "DailyNews",
+    "short_name": "DailyNews",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",

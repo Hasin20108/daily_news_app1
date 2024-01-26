@@ -1,14 +1,14 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:carousel_slider/carousel_slider.dart';
-import 'package:daily_news_app1/models/article_model.dart';
-import 'package:daily_news_app1/models/category_model.dart';
-import 'package:daily_news_app1/models/slider_model.dart';
-import 'package:daily_news_app1/pages/all_news.dart';
-import 'package:daily_news_app1/pages/article_view.dart';
-import 'package:daily_news_app1/pages/category_news.dart';
-import 'package:daily_news_app1/services/data.dart';
-import 'package:daily_news_app1/services/news.dart';
-import 'package:daily_news_app1/services/slider_data.dart';
+import 'package:DailyNews/models/article_model.dart';
+import 'package:DailyNews/models/category_model.dart';
+import 'package:DailyNews/models/slider_model.dart';
+import 'package:DailyNews/pages/all_news.dart';
+import 'package:DailyNews/pages/article_view.dart';
+import 'package:DailyNews/pages/category_news.dart';
+import 'package:DailyNews/services/data.dart';
+import 'package:DailyNews/services/news.dart';
+import 'package:DailyNews/services/slider_data.dart';
 import 'package:flutter/material.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
@@ -58,7 +58,7 @@ class _HomeState extends State<Home> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Text("Daily"),
-            Text(" News",
+            Text("News",
                 style:
                     TextStyle(color: Colors.blue, fontWeight: FontWeight.bold))
           ],
