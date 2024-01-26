@@ -9,7 +9,7 @@ import 'article_view.dart';
 
 class AllNews extends StatefulWidget {
   String news;
-  AllNews({required this.news});
+  AllNews({super.key, required this.news});
 
   @override
   State<AllNews> createState() => _AllNewsState();
@@ -19,6 +19,7 @@ class _AllNewsState extends State<AllNews> {
   List<SliderModel> sliders = [];
   List<ArticleModel> articles = [];
 
+  @override
   void initState() {
     // TODO: implement initState
 
@@ -46,17 +47,17 @@ class _AllNewsState extends State<AllNews> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(widget.news+"News",
-            style: TextStyle(color: Colors.blue, fontWeight: FontWeight.bold)),
+        title: Text("${widget.news}News",
+            style: const TextStyle(color: Colors.blue, fontWeight: FontWeight.bold)),
         centerTitle: true,
         elevation: 0.0,
       ),
       body: Container(
-        margin: EdgeInsets.symmetric(horizontal: 10.0),
+        margin: const EdgeInsets.symmetric(horizontal: 10.0),
         child:
         ListView.builder(
             shrinkWrap: true,
-            physics: ClampingScrollPhysics(),
+            physics: const ClampingScrollPhysics(),
             itemCount: widget.news == "Breaking" ? sliders.length: articles.length,
             itemBuilder: (context, index) {
               return AllNewsSection(
@@ -74,7 +75,7 @@ class _AllNewsState extends State<AllNews> {
 class AllNewsSection extends StatelessWidget {
   String image, desc, title, url;
   AllNewsSection(
-      {required this.image,
+      {super.key, required this.image,
       required this.desc,
       required this.title,
       required this.url});
@@ -98,13 +99,13 @@ class AllNewsSection extends StatelessWidget {
                 fit: BoxFit.cover,
               ),
             ),
-            SizedBox(
+            const SizedBox(
               height: 5.0,
             ),
             Text(
               title,
               maxLines: 2,
-              style: TextStyle(
+              style: const TextStyle(
                   color: Colors.black,
                   fontSize: 18.0,
                   fontWeight: FontWeight.bold),
@@ -113,7 +114,7 @@ class AllNewsSection extends StatelessWidget {
               desc,
               maxLines: 3,
             ),
-            SizedBox(
+            const SizedBox(
               height: 20.0,
             ),
           ],

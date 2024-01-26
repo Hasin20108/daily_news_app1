@@ -6,7 +6,7 @@ import 'package:flutter/material.dart';
 
 class CategoryNews extends StatefulWidget {
   String name;
-  CategoryNews({required this.name});
+  CategoryNews({super.key, required this.name});
 
   @override
   State<CategoryNews> createState() => _CategoryNewsState();
@@ -16,6 +16,7 @@ class _CategoryNewsState extends State<CategoryNews> {
   List<ShowCategoryModel> categories = [];
   bool _loading = true;
 
+  @override
   void initState() {
     super.initState();
     getNews();
@@ -35,15 +36,15 @@ class _CategoryNewsState extends State<CategoryNews> {
     return Scaffold(
       appBar: AppBar(
         title: Text(widget.name,
-            style: TextStyle(color: Colors.blue, fontWeight: FontWeight.bold)),
+            style: const TextStyle(color: Colors.blue, fontWeight: FontWeight.bold)),
         centerTitle: true,
         elevation: 0.0,
       ),
       body: Container(
-        margin: EdgeInsets.symmetric(horizontal: 10.0),
+        margin: const EdgeInsets.symmetric(horizontal: 10.0),
         child: ListView.builder(
             shrinkWrap: true,
-            physics: ClampingScrollPhysics(),
+            physics: const ClampingScrollPhysics(),
             itemCount: categories.length,
             itemBuilder: (context, index) {
               return ShowCategory(
@@ -60,7 +61,7 @@ class _CategoryNewsState extends State<CategoryNews> {
 
 class ShowCategory extends StatelessWidget {
   String image, desc, title,url;
-  ShowCategory({required this.image, required this.desc, required this.title, required this.url});
+  ShowCategory({super.key, required this.image, required this.desc, required this.title, required this.url});
 
   @override
   Widget build(BuildContext context) {
@@ -80,19 +81,19 @@ class ShowCategory extends StatelessWidget {
                 fit: BoxFit.cover,
               ),
             ),
-            SizedBox(
+            const SizedBox(
               height: 5.0,
             ),
             Text(
               title,
               maxLines: 2,
-              style: TextStyle(
+              style: const TextStyle(
                   color: Colors.black,
                   fontSize: 18.0,
                   fontWeight: FontWeight.bold),
             ),
             Text(desc, maxLines: 3,),
-            SizedBox(height: 20.0,),
+            const SizedBox(height: 20.0,),
           ],
         ),
       ),

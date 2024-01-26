@@ -55,7 +55,7 @@ class _HomeState extends State<Home> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Row(
+        title: const Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Text("Daily"),
@@ -67,13 +67,13 @@ class _HomeState extends State<Home> {
         centerTitle: true,
         elevation: 0.0,
       ),
-      body: _loading ? Center(child: CircularProgressIndicator()) : SingleChildScrollView(
+      body: _loading ? const Center(child: CircularProgressIndicator()) : SingleChildScrollView(
               child: Container(
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Container(
-                      margin: EdgeInsets.only(left: 10.0),
+                      margin: const EdgeInsets.only(left: 10.0),
                       height: 70, //eita chara kaj kore na
                       child: ListView.builder(
                           shrinkWrap: true, // ei line er kaj bujhte pari nai
@@ -87,7 +87,7 @@ class _HomeState extends State<Home> {
                           }
                       ),
                     ),
-                    SizedBox(
+                    const SizedBox(
                       height: 20.0,
                     ),
                     Padding(
@@ -107,7 +107,7 @@ class _HomeState extends State<Home> {
                             onTap: (){
                               Navigator.push(context, MaterialPageRoute(builder: (context) => AllNews(news: "Breaking")));
                             },
-                            child: Text(
+                            child: const Text(
                               "views all",
                               style: TextStyle(
                                   color: Colors.blue,
@@ -118,7 +118,7 @@ class _HomeState extends State<Home> {
                         ],
                       ),
                     ),
-                    SizedBox(
+                    const SizedBox(
                       height: 10.0,
                     ),
                     CarouselSlider.builder(
@@ -140,11 +140,11 @@ class _HomeState extends State<Home> {
                             });
                           })),
                     ),
-                    SizedBox(
+                    const SizedBox(
                       height: 30.0,
                     ),
                     Center(child: buildIndicator()),
-                    SizedBox(
+                    const SizedBox(
                       height: 30.0,
                     ),
                     Padding(
@@ -152,7 +152,7 @@ class _HomeState extends State<Home> {
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
-                          Text(
+                          const Text(
                             "Trending News!",
                             style: TextStyle(
                                 color: Colors.black,
@@ -163,7 +163,7 @@ class _HomeState extends State<Home> {
                             onTap: (){
                               Navigator.push(context, MaterialPageRoute(builder: (context) => AllNews(news: "Trending")));
                             },
-                            child: Text(
+                            child: const Text(
                               "views all",
                               style: TextStyle(
                                   color: Colors.blue,
@@ -174,13 +174,13 @@ class _HomeState extends State<Home> {
                         ],
                       ),
                     ),
-                    SizedBox(
+                    const SizedBox(
                       height: 20.0,
                     ),
                     Container(
                       child: ListView.builder(
                           shrinkWrap: true,
-                          physics: ClampingScrollPhysics(),
+                          physics: const ClampingScrollPhysics(),
                           itemCount: articles.length,
                           itemBuilder: (context, index) {
                             return BlogTile(
@@ -198,7 +198,7 @@ class _HomeState extends State<Home> {
   }
 
   Widget buildImage(String image, int index, String name) => Container(
-        margin: EdgeInsets.symmetric(horizontal: 5.0),
+        margin: const EdgeInsets.symmetric(horizontal: 5.0),
         child: Stack(
           children: [
             ClipRRect(
@@ -210,17 +210,17 @@ class _HomeState extends State<Home> {
             ),
             Container(
               height: 250,
-              padding: EdgeInsets.only(left: 10.0),
-              margin: EdgeInsets.only(top: 170.0),
+              padding: const EdgeInsets.only(left: 10.0),
+              margin: const EdgeInsets.only(top: 170.0),
               width: MediaQuery.of(context).size.width,
-              decoration: BoxDecoration(
+              decoration: const BoxDecoration(
                   color: Colors.black26,
                   borderRadius: BorderRadius.only(
                       bottomLeft: Radius.circular(10),
                       bottomRight: Radius.circular(10))),
               child: Text(name,
                   maxLines: 2,
-                  style: TextStyle(
+                  style: const TextStyle(
                       color: Colors.white,
                       fontSize: 30.0,
                       fontWeight: FontWeight.bold)),
@@ -231,14 +231,14 @@ class _HomeState extends State<Home> {
   Widget buildIndicator() => AnimatedSmoothIndicator(
         activeIndex: activeIndex,
         count: 5,
-        effect: JumpingDotEffect(
+        effect: const JumpingDotEffect(
             activeDotColor: Colors.blue, dotWidth: 10, dotHeight: 10),
       );
 }
 
 class CategoryTile extends StatelessWidget {
   final image, categoryName;
-  CategoryTile({this.image, this.categoryName});
+  const CategoryTile({super.key, this.image, this.categoryName});
 
   @override
   Widget build(BuildContext context) {
@@ -247,7 +247,7 @@ class CategoryTile extends StatelessWidget {
         Navigator.push(context, MaterialPageRoute(builder: (context) => CategoryNews(name: categoryName)));
       },
       child: Container(
-        margin: EdgeInsets.only(right: 16), // ei line er kaj bujhte pari nai
+        margin: const EdgeInsets.only(right: 16), // ei line er kaj bujhte pari nai
         child: Stack(
           children: [
             ClipRRect(
@@ -268,7 +268,7 @@ class CategoryTile extends StatelessWidget {
               ),
               child: Center(
                   child: Text(categoryName,
-                      style: TextStyle(
+                      style: const TextStyle(
                           color: Colors.white,
                           fontSize: 14,
                           fontWeight: FontWeight.w500))),
@@ -282,7 +282,7 @@ class CategoryTile extends StatelessWidget {
 
 class BlogTile extends StatelessWidget {
   String imageUrl, title, desc,url;
-  BlogTile({required this.imageUrl, required this.desc, required this.title, required this.url});
+  BlogTile({super.key, required this.imageUrl, required this.desc, required this.title, required this.url});
 
   @override
   Widget build(BuildContext context) {
@@ -291,7 +291,7 @@ class BlogTile extends StatelessWidget {
         Navigator.push(context, MaterialPageRoute(builder: (context) => ArticleView(blogUrl: url)));
       },
       child: Container(
-        margin: EdgeInsets.only(bottom: 10.0),
+        margin: const EdgeInsets.only(bottom: 10.0),
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 10.0),
           child: Material(
@@ -313,31 +313,31 @@ class BlogTile extends StatelessWidget {
                           fit: BoxFit.cover,
                         )),
                   ),
-                  SizedBox(
+                  const SizedBox(
                     width: 10.0,
                   ),
                   Column(
                     children: [
-                      Container(
+                      SizedBox(
                         width: MediaQuery.of(context).size.width / 2,
                         child: Text(
                           title,
                           maxLines: 2,
-                          style: TextStyle(
+                          style: const TextStyle(
                               color: Colors.black,
                               fontWeight: FontWeight.bold,
                               fontSize: 17.0),
                         ),
                       ),
-                      SizedBox(
+                      const SizedBox(
                         height: 7.0,
                       ),
-                      Container(
+                      SizedBox(
                         width: MediaQuery.of(context).size.width / 2,
                         child: Text(
                           desc,
                           maxLines: 3,
-                          style: TextStyle(
+                          style: const TextStyle(
                               color: Colors.black38,
                               fontWeight: FontWeight.w500,
                               fontSize: 17.0),

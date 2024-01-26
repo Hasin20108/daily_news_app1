@@ -1,7 +1,6 @@
 import 'dart:convert';
 
 import 'package:DailyNews/models/show_category.dart';
-import 'package:DailyNews/models/slider_model.dart';
 import 'package:http/http.dart' as http;
 
 

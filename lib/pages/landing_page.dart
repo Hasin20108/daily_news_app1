@@ -15,7 +15,7 @@ class _LandingPageState extends State<LandingPage> {
       body: SingleChildScrollView(
         child: Container(
           
-            margin: EdgeInsets.symmetric(horizontal: 10.0, vertical: 10.0),
+            margin: const EdgeInsets.symmetric(horizontal: 10.0, vertical: 10.0),
             child: Column(
               children: [
                 Material(
@@ -31,32 +31,32 @@ class _LandingPageState extends State<LandingPage> {
                     ),
                   ),
                 ),
-                Text(
+                const Text(
                   "News from around the\n        world for you",
                   style: TextStyle(
                       color: Colors.black,
                       fontSize: 26.0,
                       fontWeight: FontWeight.bold),
                 ),
-                SizedBox(height: 20.0),
-                Text(
+                const SizedBox(height: 20.0),
+                const Text(
                   "Best time to read take your time to read\n            a little more or this world",
                   style: TextStyle(
                       color: Colors.black45,
                       fontSize: 18.0,
                       fontWeight: FontWeight.w500),
                 ),
-                SizedBox(height: 50.0),
+                const SizedBox(height: 50.0),
                 ElevatedButton(
                   onPressed: (){
                     Navigator.push(context, MaterialPageRoute(
                       builder: (context){
-                          return Home();
+                          return const Home();
                         },
                       )
                     );
                   },
-                  child: Text(
+                  child: const Text(
                   "Get Started",
                   style: TextStyle(
                     color: Colors.black,

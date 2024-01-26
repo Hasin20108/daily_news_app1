@@ -3,7 +3,7 @@ import 'package:webview_flutter/webview_flutter.dart';
 
 class ArticleView extends StatefulWidget {
   String blogUrl;
-  ArticleView({required this.blogUrl});
+  ArticleView({super.key, required this.blogUrl});
 
   @override
   State<ArticleView> createState() => _ArticleViewState();
@@ -15,7 +15,7 @@ class _ArticleViewState extends State<ArticleView> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Row(
+        title: const Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Text("Daily"),
