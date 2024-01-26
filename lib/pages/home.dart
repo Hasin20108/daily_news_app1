@@ -12,6 +12,7 @@ import 'package:DailyNews/services/slider_data.dart';
 import 'package:flutter/material.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
+// Home Screen
 class Home extends StatefulWidget {
   const Home({super.key});
 
